@@ -19,4 +19,10 @@ jobs:
 
       - run: docker build -t mylgg/react-test -f Dockerfile.dev .
 
+      - name: Push Docker image
+        run: |
+          docker push mylgg/react-test:latest
+
       - run: docker run -e CI=true mylgg/react-test npm test
+
+
